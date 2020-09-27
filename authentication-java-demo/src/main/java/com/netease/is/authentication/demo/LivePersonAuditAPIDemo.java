@@ -39,7 +39,7 @@ public class LivePersonAuditAPIDemo {
     /**
      * 接口地址
      */
-    private final static String API_URL = "https://verify.dun.163yun.com/v1/liveperson/audit";
+    private final static String API_URL = "https://verify.dun.163.com/v1/liveperson/audit";
     /**
      * 实例化HttpClient，发送http请求使用，可根据需要自行调参
      */
