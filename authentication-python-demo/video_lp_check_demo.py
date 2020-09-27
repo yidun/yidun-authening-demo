@@ -45,8 +45,9 @@ class TextCheckAPIDemo(object):
         for k in sorted(params.keys()):
             if k != "actionVideos":
                 buff += str(k) + str(params[k])
-                buff += self.secret_key
-                return hashlib.md5(buff.encode("utf-8")).hexdigest()
+
+        buff += self.secret_key
+        return hashlib.md5(buff.encode("utf-8")).hexdigest()
 
     def check(self, params):
         """请求易盾接口
@@ -64,10 +65,10 @@ class TextCheckAPIDemo(object):
 
         try:
             print(params)
-            return requests.post(self.API_URL, json.dumps(params), headers={'Content-Type': 'application/x-www-form-urlencoded'})
+            return requests.post(self.API_URL, params, headers={'Content-Type': 'application/x-www-form-urlencoded'}, timeout=(10))
         except BaseException as e:
             print("调用API接口失败:", e)
-
+            sys.exit(0)
 
 if __name__ == "__main__":
     """示例代码入口"""
@@ -77,10 +78,9 @@ if __name__ == "__main__":
     text_api = TextCheckAPIDemo(SECRET_ID, SECRET_KEY, BUSINESS_ID)
 
     params = {
-        "actions": ["4"],
+        "actions": "[4]",
         "videoType": 1,
-        "actionVideos": ["https://video-url"],
-        "token": "fl1asjf21las12fds31d",
+        "actionVideos": "['https://video-url']",
         "needAvatar": "false"
     }
     ret = text_api.check(params)

@@ -63,9 +63,10 @@ class TextCheckAPIDemo(object):
 
         try:
             print(params)
-            return requests.post(self.API_URL, params, headers={'Content-Type': 'application/x-www-form-urlencoded'})
+            return requests.post(self.API_URL, params, headers={'Content-Type': 'application/x-www-form-urlencoded'}, timeout=(10))
         except BaseException as e:
             print("调用API接口失败:", e)
+            sys.exit(0)
 
 
 if __name__ == "__main__":
@@ -77,8 +78,8 @@ if __name__ == "__main__":
 
     params = {
         "picType": "1",
-        "frontPicture": "http://www.xxx.com/xxx.jpg",
-        "backPicture": "http://www.xxx.com/xxx.jpg"
+        "frontPicture": "https://xxx.jpg",
+        "backPicture": "https://xxx.jpg"
     }
     ret = text_api.check(params)
     status_code = ret.status_code

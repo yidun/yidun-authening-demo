@@ -63,9 +63,10 @@ class TextCheckAPIDemo(object):
 
         try:
             print(params)
-            return requests.post(self.API_URL, params, headers={'Content-Type': 'application/x-www-form-urlencoded'})
+            return requests.post(self.API_URL, params, headers={'Content-Type': 'application/x-www-form-urlencoded'}, timeout=(10))
         except BaseException as e:
             print("调用API接口失败:", e)
+            sys.exit(0)
 
 
 if __name__ == "__main__":
@@ -77,7 +78,7 @@ if __name__ == "__main__":
 
     params = {
         "name": "张三",
-        "cardNo": "123456789012345678",
+        "cardNo": "341622987456321017",
         "picType": "1",
         "avatar": "http://www.xxx.com/xxx.jpg",
         "callback": "ebfcad1c-dba1-490c-b4de-e784c2691768"
