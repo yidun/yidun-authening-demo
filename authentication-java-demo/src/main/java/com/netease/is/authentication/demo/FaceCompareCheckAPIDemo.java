@@ -39,7 +39,7 @@ public class FaceCompareCheckAPIDemo {
     /**
      * 接口地址
      */
-    private final static String API_URL = "https://verify.dun.163yun.com/v1/facecompare/check";
+    private final static String API_URL = "https://verify.dun.163.com/v1/facecompare/check";
     /**
      * 实例化HttpClient，发送http请求使用，可根据需要自行调参
      */

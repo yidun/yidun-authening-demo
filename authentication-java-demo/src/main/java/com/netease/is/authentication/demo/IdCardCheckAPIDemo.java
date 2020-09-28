@@ -40,7 +40,7 @@ public class IdCardCheckAPIDemo {
     /**
      * 易盾身份认证服务身份证实名认证在线检测接口地址
      */
-    private final static String API_URL = "https://verify.dun.163yun.com/v1/idcard/check";
+    private final static String API_URL = "https://verify.dun.163.com/v1/idcard/check";
     /**
      * 实例化HttpClient，发送http请求使用，可根据需要自行调参
      */

@@ -42,7 +42,7 @@ public class FaceRegCheckAPIDemo {
     /**
      * 接口地址
      */
-    private final static String API_URL = "https://verify.dun.163yun.com/v1/facerecognize/check";
+    private final static String API_URL = "https://verify.dun.163.com/v1/facerecognize/check";
     /**
      * 实例化HttpClient，发送http请求使用，可根据需要自行调参
      */
