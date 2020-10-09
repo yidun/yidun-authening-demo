@@ -43,6 +43,7 @@ class TextCheckAPIDemo(object):
         """
         buff = ""
         for k in sorted(params.keys()):
+            """actionVideos不参与签名"""
             if k != "actionVideos":
                 buff += str(k) + str(params[k])
 
