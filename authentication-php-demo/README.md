@@ -5,9 +5,8 @@ https://support.dun.163.com/documents/391676076156063744?docId=41101263477386854
 ## 接口说明
 - php 版本 >= 5.x
 - 文件说明
-
+  
 ```
-
 ├── idcard_check_demo.php　      实证认证接口示例
 ├── rp_check_demo.php            实人认证接口示例
 ├── liveperson_recheck_demo.php  交互式活体检测（SDK）-单活体检测接口示例

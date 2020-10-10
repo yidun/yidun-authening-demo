@@ -17,8 +17,6 @@ define("API_URL", "https://verify.dun.163.com/v1/liveperson/audit");
 define("VERSION", "v1");
 /** API timeout*/
 define("API_TIMEOUT", 10);
-/** php内部使用的字符串编码 */
-define("INTERNAL_STRING_CHARSET", "auto");
 require("util.php");
 
 /**
@@ -53,7 +51,7 @@ function main()
     printf("reponse:</br>" . json_encode($ret));
     if ($ret["code"] == 200) {
         printf(
-            "taskId=%s,认证结果:%s,原因详情:%s,图片类型:%s,抓取头像照片:%s,公安是否比对通过:%s,相似度得分:%s,具体请参考接口文档说明",
+            "</br>taskId=%s,认证结果:%s,原因详情:%s,图片类型:%s,抓取头像照片:%s,公安是否比对通过:%s,相似度得分:%s,具体请参考接口文档说明",
             $ret["result"]["taskId"],
             $ret["result"]["status"],
             $ret["result"]["reasonType"],

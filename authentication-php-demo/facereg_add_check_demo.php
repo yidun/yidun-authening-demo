@@ -1,8 +1,8 @@
 <?php
 
 /**
- * 实证认证接口示例代码
- * 接口文档: https://support.dun.163.com/documents/391676076156063744?docId=391677747099668480
+ * 人脸注册接口示例代码
+ * 接口文档: https://support.dun.163.com/documents/391676076156063744?docId=466328480154943488
  */
 
 /** 产品密钥ID，产品标识 */
@@ -12,7 +12,7 @@ define("SECRETKEY", "your_secret_key");
 /** 业务ID，易盾根据产品业务特点分配 */
 define("BUSINESSID", "your_business_id");
 /** 易盾实人身份认证接口地址 */
-define("API_URL", "https://verify.dun.163.com/v1/idcard/check");
+define("API_URL", "https://verify.dun.163.com/v1/facerecg/addFace");
 /** api version */
 define("VERSION", "v1");
 /** API timeout*/
@@ -42,17 +42,17 @@ function check($params)
 function main()
 {
     $params = array(
+        "picType" => "1",
+        "avatar" => "http://www.xxx.com/xxx.jpg",
         "name" => "张三",
-        "cardNo" => "341622123456784317"
+        "faceId" => "323311889"
     );
     $ret = check($params);
     printf("reponse:</br>" . json_encode($ret));
     if ($ret["code"] == 200) {
         printf(
-            "</br>taskId=%s,实证认证结果:%s,原因详情:%s,具体请参考接口文档说明",
-            $ret["result"]["taskId"],
-            $ret["result"]["status"],
-            $ret["result"]["reasonType"]
+            "</br>人脸注册结果:%s,具体请参考接口文档说明",
+            $ret["result"]["status"]
         );
     } else {
         printf("</br>请求错误,请检查参数或重试");

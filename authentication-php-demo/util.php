@@ -9,6 +9,8 @@ define("INTERNAL_STRING_CHARSET", "auto");
 function curl_post($params, $url, $timout){
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     // 设置超时时间
     curl_setopt($ch, CURLOPT_TIMEOUT, $timout);
@@ -16,13 +18,13 @@ function curl_post($params, $url, $timout){
     curl_setopt($ch, CURLOPT_POST, 1);
     // 把post的变量加上
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:'.'application/x-www-form-urlencoded; charset=UTF-8'));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded; charset=UTF-8'));
     $output = curl_exec($ch);
     curl_close($ch);
     if ($output === FALSE) {
         throw new Exception("request failed,please check and retrey");
     } 
-    return $output;
+    return mb_convert_encoding($output, 'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
 }
 
 /**
@@ -48,10 +50,9 @@ function gen_signature($secretKey, $params){
 	foreach($params as $key=>$value){
 	     if($value !== null) {
 	        $buff .=$key;
-		$buff .=$value;
-    	     }
+		    $buff .=$value;
+    	}
 	}
 	$buff .= $secretKey;
 	return md5($buff);
 }
-?>

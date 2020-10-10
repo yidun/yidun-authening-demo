@@ -17,8 +17,6 @@ define("API_URL", "https://verify.dun.163.com/v1/liveperson/h5/check");
 define("VERSION", "v1");
 /** API timeout*/
 define("API_TIMEOUT", 10);
-/** php内部使用的字符串编码 */
-define("INTERNAL_STRING_CHARSET", "auto");
 require("util.php");
 
 /**
@@ -46,17 +44,17 @@ function check($params, $actionVideos)
 function main()
 {
     $params = array(
-        "actions" => array(4),
+        "actions" => "[4]",
         "videoType" => 1,
         "needAvatar" => "false"
     );
     //actionVideos不参与签名
-    $actionVideos = array("https://video-url");
+    $actionVideos = "['https://video-url']";
     $ret = check($params, $actionVideos);
     printf("reponse:</br>" . json_encode($ret));
     if ($ret["code"] == 200) {
         printf(
-            "taskId=%s,认证结果:%s,原因详情:%s,图片类型:%s,抓取头像照片:%s,具体请参考接口文档说明",
+            "</br>taskId=%s,认证结果:%s,原因详情:%s,图片类型:%s,抓取头像照片:%s,具体请参考接口文档说明",
             $ret["result"]["taskId"],
             $ret["result"]["lpCheckStatus"],
             $ret["result"]["reasonType"],

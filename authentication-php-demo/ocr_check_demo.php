@@ -1,8 +1,8 @@
 <?php
 
 /**
- * 实证认证接口示例代码
- * 接口文档: https://support.dun.163.com/documents/391676076156063744?docId=391677747099668480
+ * 身份证ocr接口示例代码
+ * 接口文档: https://support.dun.163.com/documents/391676076156063744?docId=391677688593321984
  */
 
 /** 产品密钥ID，产品标识 */
@@ -12,7 +12,7 @@ define("SECRETKEY", "your_secret_key");
 /** 业务ID，易盾根据产品业务特点分配 */
 define("BUSINESSID", "your_business_id");
 /** 易盾实人身份认证接口地址 */
-define("API_URL", "https://verify.dun.163.com/v1/idcard/check");
+define("API_URL", "https://verify.dun.163.com/v1/ocr/check");
 /** api version */
 define("VERSION", "v1");
 /** API timeout*/
@@ -42,17 +42,18 @@ function check($params)
 function main()
 {
     $params = array(
-        "name" => "张三",
-        "cardNo" => "341622123456784317"
+        "picType" => "1",
+        "frontPicture" => "https:123.jpg",
+        "backPicture" => "https:123.jpg"
     );
     $ret = check($params);
-    printf("reponse:</br>" . json_encode($ret));
+    printf("reponse:</br>" . json_encode($ret, JSON_UNESCAPED_UNICODE));
     if ($ret["code"] == 200) {
         printf(
-            "</br>taskId=%s,实证认证结果:%s,原因详情:%s,具体请参考接口文档说明",
+            "</br>taskId=%s,身份证OCR识别结果:%s,识别数据:%s,具体请参考接口文档说明",
             $ret["result"]["taskId"],
             $ret["result"]["status"],
-            $ret["result"]["reasonType"]
+            json_encode($ret["result"]["ocrResponseDetail"], JSON_UNESCAPED_UNICODE)
         );
     } else {
         printf("</br>请求错误,请检查参数或重试");

@@ -17,8 +17,6 @@ define("API_URL", "https://verify.dun.163.com/v1/rp/check");
 define("VERSION", "v1");
 /** API timeout*/
 define("API_TIMEOUT", 10);
-/** php内部使用的字符串编码 */
-define("INTERNAL_STRING_CHARSET", "auto");
 require("util.php");
 
 /**
