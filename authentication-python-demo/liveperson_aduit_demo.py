@@ -3,7 +3,7 @@
 
 """
 交互式人脸核身接口示例代码
-接口文档: https://support.dun.163.com/documents/391676076156063744?docId=456535635703713792
+接口文档: https://support.dun.163.com/documents/391676076156063744?docId=437385763744780288
 python版本：python3.x
 运行:
     1. 修改 SECRET_ID,SECRET_KEY,BUSINESS_ID 为对应申请到的值
