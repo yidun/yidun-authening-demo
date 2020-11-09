@@ -17,7 +17,7 @@ https://support.dun.163.com/documents/391676076156063744?docId=41101263477386854
 ├── FaceCompareCheckAPIDemo.java 人脸比对接口示例
 ├── FaceDetectCheckAPIDemo.java  人脸检测接口示例
 ├── FaceRegAddFaceAPIDemo.java   人脸检索添加人脸数据接口示例
-├── FaceDetectCheckAPIDemo.java  人脸检索接口示例
+├── FaceRegCheckAPIDemo.java     人脸检索接口示例
 ├── OcrCheckAPIDemo.java　       身份证OCR识别接口示例
 ├── Mobile3CheckAPIDemo.java     手机号三要素接口示例
 ├── Mobile2CheckAPIDemo.java     手机号二要素接口示例
