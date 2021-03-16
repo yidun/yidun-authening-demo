@@ -19,6 +19,7 @@ https://support.dun.163.com/documents/391676076156063744?docId=41101263477386854
 ├── FaceRegAddFaceAPIDemo.js   人脸检索添加人脸数据接口示例
 ├── FaceRegCheckAPIDemo.js  人脸检索接口示例
 ├── OcrCheckAPIDemo.js　       身份证OCR识别接口示例
+├── BankCardOcrCheckAPIDemo.js 银行卡OCR识别接口示例
 ├── Mobile3CheckAPIDemo.js     手机号三要素接口示例
 ├── Mobile2CheckAPIDemo.js     手机号二要素接口示例
 ├── BankCardCheckAPIDemo.js    银行卡三/四要素认证接口示例

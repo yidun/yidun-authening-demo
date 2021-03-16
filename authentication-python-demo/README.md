@@ -19,6 +19,7 @@ https://support.dun.163.com/documents/391676076156063744?docId=41101263477386854
 ├── facereg_add_check_demo.py   人脸检索添加人脸数据接口示例
 ├── facereg_check_demo.py       人脸检索接口示例
 ├── ocr_check_demo.py　          身份证OCR识别接口示例
+├── bankcard_ocr_check_demo.py　 银行卡OCR识别接口示例
 ├── mobile3ele_check_demo.py     手机号三要素接口示例
 ├── mobile2ele_check_demo.py     手机号二要素接口示例
 ├── bankcard_check_demo.py       银行卡三/四要素认证接口示例
