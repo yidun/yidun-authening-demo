@@ -54,6 +54,7 @@ public class FaceRegAddFaceAPIDemo {
         params.put("version", "v1");
         params.put("timestamp", String.valueOf(System.currentTimeMillis()));
         params.put("nonce", String.valueOf(new Random().nextInt()));
+        // params.put("signatureMethod", "SM3"); // 可选参数，可选值为MD5、SHA1、SHA256、SM3。如果不传该字段，默认采用MD5算法生成签名。
 
         // 2.设置私有参数
         params.put("name", "测试人员1");
