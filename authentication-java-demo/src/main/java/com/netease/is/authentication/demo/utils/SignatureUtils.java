@@ -10,7 +10,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Map;
 
+import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.bouncycastle.crypto.digests.SM3Digest;
 
 /**
@@ -27,8 +29,8 @@ public class SignatureUtils {
      * @return
      * @throws UnsupportedEncodingException
      */
-    public static String getSignature(String secretKey, Map<String, String> params) throws UnsupportedEncodingException {
-        return getSignature(secretKey, params, params.get("signatureMethod"));
+    public static String genSignature(String secretKey, Map<String, String> params) throws UnsupportedEncodingException {
+        return genSignature(secretKey, params, params.get("signatureMethod"));
     }
 
     /**
@@ -39,7 +41,7 @@ public class SignatureUtils {
      * @return
      * @throws UnsupportedEncodingException
      */
-    public static String getSignature(String secretKey, Map<String, String> params, String signatureMethod) throws UnsupportedEncodingException {
+    public static String genSignature(String secretKey, Map<String, String> params, String signatureMethod) throws UnsupportedEncodingException {
         // 1. 参数名按照ASCII码表升序排序
         String[] keys = params.keySet().toArray(new String[0]);
         Arrays.sort(keys);
