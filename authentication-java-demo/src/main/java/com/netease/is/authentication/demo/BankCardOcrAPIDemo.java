@@ -71,7 +71,7 @@ public class BankCardOcrAPIDemo {
         System.out.printf("response=%s%n", jObject);
         int code = jObject.get("code").getAsInt();
         if (code == 200) {
-            JsonObject resultObject = jsonObject.getAsJsonObject("result");
+            JsonObject resultObject = jObject.getAsJsonObject("result");
             int status = resultObject.get("status").getAsInt();
             String taskId = resultObject.get("taskId").getAsString();
             if (status == 1) {

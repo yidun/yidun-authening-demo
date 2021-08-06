@@ -71,7 +71,6 @@ public class SignatureUtils {
                     return "";
             }
         }
-        return "";
     }
 
     public static String sm3DigestHex(byte[] srcData) throws UnsupportedEncodingException {
