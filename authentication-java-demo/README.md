@@ -23,6 +23,8 @@ https://support.dun.163.com/documents/391676076156063744?docId=41101263477386854
 ├── Mobile3CheckAPIDemo.java     手机号三要素接口示例
 ├── Mobile2CheckAPIDemo.java     手机号二要素接口示例
 ├── BankCardCheckAPIDemo.java    银行卡三/四要素认证接口示例
+├── ForeignCheckAPIDemo.java     出入境证件核验接口示例
+├── IdlePhoneCheckAPIDemo.java   空号检测接口示例
 ├── HttpClient4Utils.java   httpclient封装类
 └── SignatureUtils.java     签名方法封装类
 ```
